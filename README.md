@@ -95,12 +95,4 @@ countries/
 
 ## Deployment
 
-Every push to `main` runs `.github/workflows/deploy.yml`: install, lint, build, then publish `dist/` to GitHub Pages. `404.html` is a copy of `index.html`, so direct links like `/countries/country/Ukraine` work as a single-page app.
-
-One-time setup in the GitHub repository:
-
-1. **Settings → Secrets and variables → Actions**: add a secret `VITE_RESTCOUNTRIES_API_KEY` with your API key.
-2. **Settings → Pages → Build and deployment**: set **Source** to **GitHub Actions**.
-3. On restcountries.com add `<your-username>.github.io` to the key's CORS allowed origins.
-
-The key ends up in the client bundle, which is expected for a browser-only app. The CORS allowlist stops other websites from using it.
+The app is deployed to GitHub Pages by [GitHub Actions](.github/workflows/deploy.yml) on every push to `main`.
